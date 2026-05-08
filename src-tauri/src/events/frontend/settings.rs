@@ -32,7 +32,9 @@ pub async fn set_settings(_app: AppHandle, settings: crate::store::Settings) -> 
 	};
 
 	crate::events::outbound::devices::set_brightness(settings.brightness).await?;
-	crate::device_sleep::update_timeout_minutes(settings.sleep_timeout_minutes);
+	crate::device_sleep::update_timeout_minutes(settings.sleep_timeout_minutes).await?;
+	crate::device_sleep::update_sleep_when_computer_locked(settings.sleep_when_computer_locked).await?;
+
 	let mut store = match crate::store::get_settings() {
 		Ok(store) => store,
 		Err(error) => return Err(error.into()),

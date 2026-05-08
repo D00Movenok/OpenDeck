@@ -94,7 +94,9 @@ struct SetBrightnessEvent {
 /// Set the brightness for all devices.
 pub async fn set_brightness(brightness: u8) -> Result<(), anyhow::Error> {
 	for device in crate::shared::DEVICES.iter() {
-		set_device_brightness(&device.id, brightness).await?;
+		if !crate::device_sleep::is_sleeping(&device.id) {
+			set_device_brightness(&device.id, brightness).await?;
+		}
 	}
 
 	Ok(())
