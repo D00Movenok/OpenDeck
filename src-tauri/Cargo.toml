@@ -52,7 +52,7 @@ path-slash = "0.2"
 fix-path-env = { git = "https://github.com/tauri-apps/fix-path-env-rs", rev = "c4c45d503ea115a839aae718d02f79e7c7f0f673" }
 font-loader = "0.11"
 chrono = "0.4"
-psp = { git = "https://github.com/pewsheen/psp", rev = "ddef0c61aeedc0ad1891de31659fd6c2e1bcaedb" }
+psp = { git = "https://github.com/D00Movenok/psp", rev = "e9d1561f401747f1a9e90aa3f6623b67b5d217c9" }
 
 [target.'cfg(target_os = "linux")'.dependencies]
 libc = "0.2"
