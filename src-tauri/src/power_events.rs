@@ -25,7 +25,7 @@ pub fn init_power_events() {
 						}
 					});
 				}
-				PowerState::Suspend | PowerState::Resume | PowerState::Unknown => log::debug!("Ignoring power event {event:?}"),
+				PowerState::Suspend | PowerState::Resume | PowerState::Shutdown | PowerState::Unknown => log::debug!("Ignoring power event {event:?}"),
 			}
 		}
 	});
