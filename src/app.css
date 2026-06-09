@@ -105,6 +105,7 @@ button, input[type="radio"], input[type="checkbox"], input[type="range"], input[
 }
 .plugin-readme .markdown-alert {
 	padding: 0 1em;
+	margin-top: 16px;
 	margin-bottom: 16px;
 	color: inherit;
 	border-left: 0.25em solid #444c56;
